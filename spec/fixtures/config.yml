@@ -1,0 +1,4 @@
+test:
+  default: mongodb://localhost:27017/mongo_sugar_test
+  second: mongodb://localhost:27017/mongo_sugar_test_2
+  third: mongodb://localhost:27017/mongo_sugar_test_3

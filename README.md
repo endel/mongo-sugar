@@ -43,7 +43,7 @@ syntax.
       store_in :collection => 'custom_collection'
     end
 
-For more details, read the [documentation](http://endel.github.com/mongo-sugar) here.
+For more details, read the [documentation](http://rubydoc.info/github/endel/mongo-sugar/master/frames) here.
 
 License
 ===

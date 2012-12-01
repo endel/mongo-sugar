@@ -6,8 +6,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Endel Dreyer"]
   s.email       = ["endel.dreyer@gmail.com"]
   s.homepage    = "https://github.com/endel/mongo-sugar"
-  s.summary     = "Sugar Syntatic for Official MongoDB Driver"
-  s.description = "Provide a syntatic sugar for MongoDB ruby driver, similar to an ORM."
+  s.summary     = "Syntactic Sugar for Official MongoDB Driver"
+  s.description = "Provide a syntatic sugar for official MongoDB ruby driver, similar to an ORM."
 
   s.files = Dir["{lib}/**/*"] + ["LICENSE", "README.md"]
   s.test_files = Dir["spec/**/*"]

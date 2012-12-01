@@ -1,7 +1,7 @@
 Mongo Sugar [![Build Status](https://secure.travis-ci.org/endel/mongo-sugar.png)](http://travis-ci.org/endel/mongo-sugar)
 ===
 
-Provide a syntatic sugar for MongoDB ruby driver, similar to an ORM.
+Provide a syntatic sugar for official MongoDB ruby driver, similar to an ORM.
 
 But it isn't another ORM. If you need relationship features, you should use
 [MongoID](http://mongoid.org/), [MongoMapper](http://mongomapper.com/), or, why

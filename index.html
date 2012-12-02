@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Mongo-sugar by endel</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Mongo-sugar</h1>
+        <p>Syntactic Sugar for Official MongoDB Driver</p>
+
+        <p class="view"><a href="https://github.com/endel/mongo-sugar">View the Project on GitHub <small>endel/mongo-sugar</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/endel/mongo-sugar/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/endel/mongo-sugar/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/endel/mongo-sugar">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Mongo Sugar <a href="http://travis-ci.org/endel/mongo-sugar"><img src="https://secure.travis-ci.org/endel/mongo-sugar.png" alt="Build Status"></a>
+</h1>
+
+<p>Provide a syntatic sugar for official MongoDB ruby driver, similar to an ORM.</p>
+
+<p>But it isn't another ORM. If you need relationship features, you should use
+<a href="http://mongoid.org/">MongoID</a>, <a href="http://mongomapper.com/">MongoMapper</a>, or, why
+not - a relational database.</p>
+
+<h1>Usage</h1>
+
+<p>Add mongo-sugar to your gemfile:</p>
+
+<pre><code>gem 'mongo-sugar'
+</code></pre>
+
+<p>Require it on your code:</p>
+
+<pre><code>require 'mongo-sugar'
+</code></pre>
+
+<p>Define classes as collections. By default, collection names are the class name
+underscored. On the following example, the collection name is <code>my_collection</code>.</p>
+
+<pre><code>class MyCollection &lt; Mongo::Sugar::Collection
+  #
+  # Define your custom methods, like this:
+  #
+  def do_upsert(hash)
+    @collection.update({
+      key: hash[:key]
+    }, {
+      :$addToSet =&gt; {
+        :value =&gt; hash[:value]
+      }
+    }, :upsert =&gt; true)
+  end
+end
+</code></pre>
+
+<p>You can customize the collection names using <code>store_in</code>, which is similar to mongoid
+syntax.</p>
+
+<pre><code>class MyCollection &lt; Mongo::Sugar::Collection
+  store_in :collection =&gt; 'custom_collection'
+end
+</code></pre>
+
+<p>For more details, read the <a href="http://rubydoc.info/github/endel/mongo-sugar/master/frames">documentation</a> here.</p>
+
+<h1>License</h1>
+
+<p>This library is released under MIT License. Please see LICENSE file.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/endel">endel</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-22321935-9");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
